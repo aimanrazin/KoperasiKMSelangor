@@ -2,6 +2,7 @@ import { print } from "graphql/language/printer";
 import { ContentNode, Page } from "@/gql/graphql";
 import { fetchGraphQL } from "@/utils/fetchGraphQL";
 import { PageQuery } from "./PageQuery";
+import "./styles.scss";
 
 interface TemplateProps {
   node: ContentNode;
@@ -12,5 +13,10 @@ export default async function PageTemplate({ node }: TemplateProps) {
     id: node.databaseId,
   });
 
-  return <div dangerouslySetInnerHTML={{ __html: page?.content || "" }} />;
+  return (
+    <div
+      className={`blog-content page-body`}
+      dangerouslySetInnerHTML={{ __html: page?.content || "" }}
+    />
+  );
 }

@@ -11,11 +11,160 @@ body {
 }
 
 body {
-  color: #fff;
-  background: #000;
+  color: #2e2e2e;
+  background: hsla(215, 15%, 97%, 0.5);
 }
 
-a {
+/* a {
   color: #fff;
   text-decoration: underline;
+} */
+
+/* blog-content.css */
+
+/* Base typography */
+.blog-content {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,
+    sans-serif;
+  line-height: 1.75;
+  font-size: 1rem;
+  color: #1a1a1a;
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Responsive typography */
+@media (min-width: 640px) {
+  .blog-content {
+    font-size: 1.125rem;
+  }
+}
+@media (min-width: 1024px) {
+  .blog-content {
+    font-size: 1.25rem;
+  }
+}
+
+/* Headings */
+.blog-content h1,
+.blog-content h2,
+.blog-content h3,
+.blog-content h4,
+.blog-content h5,
+.blog-content h6 {
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 2rem 0 1rem;
+}
+
+.blog-content h1 {
+  font-size: 2rem;
+}
+.blog-content h2 {
+  font-size: 1.75rem;
+}
+.blog-content h3 {
+  font-size: 1.5rem;
+}
+.blog-content h4 {
+  font-size: 1.25rem;
+}
+.blog-content h5 {
+  font-size: 1.125rem;
+}
+.blog-content h6 {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Paragraphs */
+.blog-content p {
+  margin-bottom: 1.25rem;
+}
+
+/* Links */
+.blog-content a {
+  color: #2563eb;
+  text-decoration: underline;
+}
+.blog-content a:hover {
+  color: #1e40af;
+}
+
+/* Images */
+.blog-content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  /* margin: 1.5rem auto; */
+  border-radius: 0.5rem;
+}
+
+/* Blockquotes */
+.blog-content blockquote {
+  border-left: 4px solid #2563eb;
+  padding-left: 1rem;
+  color: #374151;
+  font-style: italic;
+  margin: 1.5rem 0;
+}
+
+/* Lists */
+.blog-content ul,
+.blog-content ol {
+  margin: 1.25rem 0 1.25rem 1.5rem;
+  padding: 0;
+}
+.blog-content li {
+  margin-bottom: 0.5rem;
+}
+
+/* Code blocks */
+.blog-content pre {
+  background: #1f2937;
+  color: #f9fafb;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  font-size: 0.875rem;
+  margin: 1.5rem 0;
+}
+.blog-content code {
+  background: #f3f4f6;
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.875rem;
+}
+
+/* Tables */
+.blog-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.95rem;
+}
+.blog-content th,
+.blog-content td {
+  border: 1px solid #e5e7eb;
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+.blog-content th {
+  background: #f9fafb;
+  font-weight: 600;
+}
+
+/* Responsive video embeds */
+.blog-content iframe {
+  max-width: 100%;
+  border: none;
+  aspect-ratio: 16 / 9;
+  margin: 1.5rem 0;
+}
+
+/* Wordpress overwrite */
+.wp-block-columns {
+  gap: 1.25rem;
 }

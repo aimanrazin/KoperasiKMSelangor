@@ -8,11 +8,13 @@
     "codegen": "graphql-codegen --config codegen.ts && node ./add-ts-nocheck.js"
   },
   "dependencies": {
+    "@wordpress/block-library": "^9.30.0",
     "graphql": "^16.9.0",
     "graphql-tag": "^2.12.6",
     "next": "latest",
     "react": "18.3.1",
-    "react-dom": "18.3.1"
+    "react-dom": "18.3.1",
+    "sass": "^1.92.1"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "5.0.0",

@@ -1,6 +1,9 @@
 import { draftMode } from "next/headers";
 import { Inter } from "next/font/google";
 
+import '@wordpress/block-library/build-style/style.css';        // Frontend block styles
+import '@wordpress/block-library/build-style/theme.css';        // Theme-related styles
+
 import "@/app/globals.css";
 
 import Navigation from "@/components/Globals/Navigation/Navigation";

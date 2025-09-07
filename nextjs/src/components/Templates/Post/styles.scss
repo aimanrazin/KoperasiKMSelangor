@@ -1,0 +1,19 @@
+.post-body {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 30px;
+
+  &__title {
+    text-align: center;
+  }
+
+  &__author {
+    text-align: center;
+    color: #666;
+    margin: 30px 0;
+  }
+
+  &__body {
+    display: block;
+  }
+}
