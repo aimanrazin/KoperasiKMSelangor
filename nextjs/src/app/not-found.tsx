@@ -10,22 +10,21 @@ import { SeoQuery } from "@/queries/general/SeoQuery";
 
 const notFoundPageWordPressId = 10;
 
-// TODO: reopen for seo
-// export async function generateMetadata(): Promise<Metadata> {
-//   const { contentNode } = await fetchGraphQL<{ contentNode: ContentNode }>(
-//     print(SeoQuery),
-//     { slug: notFoundPageWordPressId, idType: "DATABASE_ID" },
-//   );
+export async function generateMetadata(): Promise<Metadata> {
+  const { contentNode } = await fetchGraphQL<{ contentNode: ContentNode }>(
+    print(SeoQuery),
+    { slug: notFoundPageWordPressId, idType: "DATABASE_ID" },
+  );
 
-//   const metadata = setSeoData({ seo: contentNode.seo });
+  const metadata = setSeoData({ seo: contentNode.seo });
 
-//   return {
-//     ...metadata,
-//     alternates: {
-//       canonical: `${process.env.NEXT_PUBLIC_BASE_URL}/404-not-found/`,
-//     },
-//   } as Metadata;
-// }
+  return {
+    ...metadata,
+    alternates: {
+      canonical: `${process.env.NEXT_PUBLIC_BASE_URL}/404-not-found/`,
+    },
+  } as Metadata;
+}
 
 export default async function NotFound() {
   const { page } = await fetchGraphQL<{ page: Page }>(print(PageQuery), {

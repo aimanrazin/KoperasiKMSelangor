@@ -48,7 +48,6 @@ export async function fetchGraphQL<T = any>(
     }
 
     const data = await response.json();
-    console.log("aiman body data", body, data);
 
     if (data.errors) {
       console.error("GraphQL Errors:", data.errors);
