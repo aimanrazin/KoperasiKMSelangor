@@ -2,6 +2,7 @@ import { print } from "graphql/language/printer";
 import { ContentNode, Page } from "@/gql/graphql";
 import { fetchGraphQL } from "@/utils/fetchGraphQL";
 import { PageQuery } from "./PageQuery";
+import DOMPurify from "isomorphic-dompurify";
 import "./styles.scss";
 
 interface TemplateProps {
@@ -16,7 +17,9 @@ export default async function PageTemplate({ node }: TemplateProps) {
   return (
     <div
       className={`blog-content page-body`}
-      dangerouslySetInnerHTML={{ __html: page?.content || "" }}
+      dangerouslySetInnerHTML={{
+        __html: DOMPurify.sanitize(page?.content || ""),
+      }}
     />
   );
 }

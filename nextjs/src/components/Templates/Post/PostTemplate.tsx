@@ -1,4 +1,5 @@
 import { print } from "graphql/language/printer";
+import DOMPurify from 'isomorphic-dompurify';
 
 import { ContentNode, Post } from "@/gql/graphql";
 import { fetchGraphQL } from "@/utils/fetchGraphQL";
@@ -22,7 +23,9 @@ export default async function PostTemplate({ node }: TemplateProps) {
 
       <div
         className={`blog-content post__body`}
-        dangerouslySetInnerHTML={{ __html: post.content || "" }}
+        dangerouslySetInnerHTML={{
+          __html: DOMPurify.sanitize(post.content || ""),
+        }}
       />
     </article>
   );

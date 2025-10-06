@@ -1,0 +1,33 @@
+.footer {
+  --footer-wrapper-font-size: 1rem;
+  // min-height: 377px;
+  background-color: black;
+  display: flex;
+  gap: 1rem;
+
+  @media (min-width: 640px) {
+    --footer-wrapper-font-size: 1.125rem;
+  }
+  @media (min-width: 1024px) {
+    --footer-wrapper-font-size: 1.25rem;
+  }
+
+  &__wrapper {
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,
+      sans-serif;
+    line-height: 1.75;
+    font-size: var(--footer-wrapper-font-size);
+    max-width: 1060px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+
+  &__layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+    margin: 3rem 0;
+  }
+}
