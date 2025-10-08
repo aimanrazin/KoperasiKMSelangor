@@ -2,13 +2,13 @@
 import { useMemo } from "react";
 import DOMPurify from "isomorphic-dompurify";
 import { Box, Link, Stack, Typography, Avatar } from "@mui/material";
-import { NewMenu } from "./Footer";
+import { NewFooterMenu } from "./Footer";
 
 export default function FooterClient({
   menuItems,
   copywrite,
 }: {
-  menuItems: NonNullable<NewMenu["footer"]>["menuItems"] | [];
+  menuItems: NonNullable<NewFooterMenu["footer"]>["menuItems"] | [];
   copywrite: string;
 }) {
   const columnItems = useMemo(() => {

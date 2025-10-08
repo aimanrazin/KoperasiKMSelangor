@@ -11,6 +11,7 @@ import PageTemplate from "@/components/Templates/Page/PageTemplate";
 import { nextSlugToWpSlug } from "@/utils/nextSlugToWpSlug";
 import PostTemplate from "@/components/Templates/Post/PostTemplate";
 import { SeoQuery } from "@/queries/general/SeoQuery";
+import { Box } from "@mui/material";
 
 type Props = {
   params: { slug: string };
@@ -63,7 +64,11 @@ export default async function Page({ params }: Props) {
 
   switch (contentNode.contentTypeName) {
     case "page":
-      return <PageTemplate node={contentNode} />;
+      return (
+        <Box marginTop={"96px"}>
+          <PageTemplate node={contentNode} />
+        </Box>
+      );
     case "post":
       return <PostTemplate node={contentNode} />;
     default:

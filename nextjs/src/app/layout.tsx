@@ -6,7 +6,7 @@ import "@wordpress/block-library/build-style/theme.css"; // Theme-related styles
 
 import "@/app/globals.css";
 
-import Navigation from "@/components/Globals/Navigation/Navigation";
+import Header from "@/components/Globals/Header/Header";
 import { PreviewNotice } from "@/components/Globals/PreviewNotice/PreviewNotice";
 import Footer from "@/components/Globals/Footer/Footer";
 
@@ -23,7 +23,7 @@ export default async function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         {isEnabled && <PreviewNotice />}
-        <Navigation />
+        <Header />
         {children}
         <Footer />
       </body>

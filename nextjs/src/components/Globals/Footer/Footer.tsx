@@ -8,7 +8,7 @@ import gql from "graphql-tag";
 import { useMemo } from "react";
 import FooterClient from "./FooterClient";
 
-export interface NewMenu extends Menu {
+export type NewFooterMenu = Menu & {
   footer?: {
     copywrite: string;
     menuItems: {
@@ -21,6 +21,8 @@ export interface NewMenu extends Menu {
               sourceUrl: string;
             };
           };
+          label: string;
+          link: string;
         }[];
       };
       col2: {
@@ -34,12 +36,12 @@ export interface NewMenu extends Menu {
         items: {
           label: string;
           link: string;
-        };
+        }[];
         title: string;
-      }[];
+      };
     };
   };
-}
+};
 
 async function getData() {
   const menuQuery = gql`
@@ -58,6 +60,7 @@ async function getData() {
                   }
                 }
                 label
+                link
               }
             }
             col2 {
@@ -80,18 +83,15 @@ async function getData() {
     }
   `;
 
-  const data = await fetchGraphQL<{ menu: NewMenu | null }>(print(menuQuery));
-
-  if (!data?.menu) {
-    throw new Error("Failed to fetch data");
-  }
-
+  const data = await fetchGraphQL<{ menu: NewFooterMenu | null }>(
+    print(menuQuery)
+  );
+  if (!data?.menu) throw new Error("Failed to fetch data");
   return data.menu;
 }
 
 export default async function Footer() {
   const { footer } = await getData();
-
   return (
     <FooterClient
       menuItems={footer?.menuItems ?? []}
