@@ -1,8 +1,8 @@
 "use client";
 import { useMemo } from "react";
-import DOMPurify from "isomorphic-dompurify";
 import { Box, Link, Stack, Typography, Avatar } from "@mui/material";
 import { NewFooterMenu } from "./Footer";
+import { sanitizeHTML } from "@/utils/sanitizeHelper";
 
 export default function FooterClient({
   menuItems,
@@ -29,7 +29,7 @@ export default function FooterClient({
               <Typography
                 variant="h6"
                 dangerouslySetInnerHTML={{
-                  __html: DOMPurify.sanitize(x.title),
+                  __html: sanitizeHTML(x.title),
                 }}
                 // component="div"
                 color="#fefefe"
@@ -37,7 +37,7 @@ export default function FooterClient({
               />
               <Stack spacing={1.5}>
                 {x.items.map((item: any, idx: number) => {
-                  const cleanLabel = DOMPurify.sanitize(item.label);
+                  const cleanLabel = sanitizeHTML(item.label);
                   return (
                     <Link
                       key={idx}

@@ -30,4 +30,13 @@
       gap: 1.75rem;
     }
   }
+
+  .has-text-align-justify {
+    text-align: justify;
+  }
+
+  .margin-x-auto {
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+  }
 }

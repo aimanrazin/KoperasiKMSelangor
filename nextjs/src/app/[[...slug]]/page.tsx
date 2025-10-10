@@ -64,11 +64,7 @@ export default async function Page({ params }: Props) {
 
   switch (contentNode.contentTypeName) {
     case "page":
-      return (
-        <Box marginTop={"96px"}>
-          <PageTemplate node={contentNode} />
-        </Box>
-      );
+      return <PageTemplate node={contentNode} />;
     case "post":
       return <PostTemplate node={contentNode} />;
     default:

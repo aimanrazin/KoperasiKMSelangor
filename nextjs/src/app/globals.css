@@ -1,5 +1,10 @@
 :root {
+  --footer-min-height: 330px;
+  --content-margin-top: 96px;
   --content-max-width: 1060px;
+  --content-min-height: calc(
+    100vh - var(--footer-min-height) - var(--content-margin-top)
+  );
 }
 
 * {
@@ -36,6 +41,16 @@ body {
   max-width: var(--content-max-width);
   margin: 0 auto;
   padding: 1rem;
+  box-shadow: -6px 0 12px -6px rgba(0, 0, 0, 0.08),
+    /* left */ 6px 0 12px -6px rgba(0, 0, 0, 0.08); /* right */
+  line-height: 1.6; /* comfortable text spacing */
+  transition: transform 0.3s, box-shadow 0.3s;
+  /* border-radius: 12px; */
+}
+
+/* Optional hover effect for interactive feel */
+.blog-content:hover {
+  transform: translateY(-3px);
 }
 
 /* Responsive typography */

@@ -4,6 +4,8 @@ import { fetchGraphQL } from "@/utils/fetchGraphQL";
 import { PageQuery } from "./PageQuery";
 import DOMPurify from "isomorphic-dompurify";
 import "./styles.scss";
+import PageWrapper from "@/components/Globals/Page/PageWrapper";
+import { sanitizeHTML } from "@/utils/sanitizeHelper";
 
 interface TemplateProps {
   node: ContentNode;
@@ -15,11 +17,13 @@ export default async function PageTemplate({ node }: TemplateProps) {
   });
 
   return (
-    <div
-      className={`blog-content page-body`}
-      dangerouslySetInnerHTML={{
-        __html: DOMPurify.sanitize(page?.content || ""),
-      }}
-    />
+    <PageWrapper>
+      <div
+        className={`blog-content page-body`}
+        dangerouslySetInnerHTML={{
+          __html: sanitizeHTML(page?.content || ""),
+        }}
+      />
+    </PageWrapper>
   );
 }

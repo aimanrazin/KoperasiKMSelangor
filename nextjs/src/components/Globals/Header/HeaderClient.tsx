@@ -137,18 +137,24 @@ export default function HeaderClient({
           >
             {/* Left: Logo */}
             <Box display="flex" alignItems="center" gap={1}>
-              {logo?.node?.sourceUrl ? (
-                <Box
-                  component="img"
-                  src={logo.node.sourceUrl}
-                  alt={logo.node.altText || "Logo"}
-                  sx={{ height: 32 }}
-                />
-              ) : (
-                <Typography variant="h6" fontWeight="bold" color="text.primary">
-                  KMFarm
-                </Typography>
-              )}
+              <Link href={"/"}>
+                {logo?.node?.sourceUrl ? (
+                  <Box
+                    component="img"
+                    src={logo.node.sourceUrl}
+                    alt={logo.node.altText || "Logo"}
+                    sx={{ height: 32 }}
+                  />
+                ) : (
+                  <Typography
+                    variant="h6"
+                    fontWeight="bold"
+                    color="text.primary"
+                  >
+                    KMFarm
+                  </Typography>
+                )}
+              </Link>
             </Box>
 
             {/* Center: Navigation */}

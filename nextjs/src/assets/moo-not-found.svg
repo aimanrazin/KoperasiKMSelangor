@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 120 120"
+  role="img"
+  aria-labelledby="title desc"
+  width="125" height="125"
+  style="display:block;">
+  <title id="title">Animated cow holding magnifying glass — not found icon</title>
+  <desc id="desc">A cute animated cow holding a magnifying glass, blinking and looking around.</desc>
+
+  <style>
+    :root {
+      --cow-body: #fff;
+      --cow-spot: #2b2b2b;
+      --cow-nose: #f9a77b;
+      --accent: #3b82f6;
+      --outline: #2b2b2b;
+      --eye: #2b2b2b;
+    }
+
+    .outline { stroke: var(--outline); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .blink {
+      animation: blink 2s infinite;
+      transform-box: fill-box;
+      transform-origin: 60px 5px;
+    }
+    .magnifier {
+      animation: searchmove 3s ease-in-out infinite;
+      transform-origin: center;
+    }
+    .cow {
+      animation: bounce 3s ease-in-out infinite;
+      transform-origin: center bottom;
+    }
+
+    @keyframes blink {
+      0%, 90%, 100% { transform: scaleY(1); }
+      92%, 96% { transform: scaleY(0.1); }
+    }
+
+    @keyframes searchmove {
+      0%, 100% { transform: rotate(20deg) translate(0, 0); }
+      50% { transform: rotate(25deg) translate(2px, -2px); }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-1.5px); }
+    }
+  </style>
+
+  <!-- Whole cow -->
+  <g class="cow" transform="translate(0,0)">
+    <!-- Body -->
+    <ellipse cx="60" cy="80" rx="30" ry="22" fill="var(--cow-body)" stroke="var(--outline)" stroke-width="2"/>
+    <ellipse cx="48" cy="70" rx="6" ry="4" fill="var(--cow-spot)" opacity="0.8"/>
+    <ellipse cx="72" cy="78" rx="8" ry="5" fill="var(--cow-spot)" opacity="0.8"/>
+
+    <!-- Head -->
+    <circle cx="60" cy="45" r="22" fill="var(--cow-body)" stroke="var(--outline)" stroke-width="2"/>
+
+    <!-- Nose -->
+    <ellipse cx="60" cy="52" rx="14" ry="10" fill="var(--cow-nose)" stroke="var(--outline)" stroke-width="1.5"/>
+    <circle cx="55" cy="52" r="1.5" fill="var(--outline)"/>
+    <circle cx="65" cy="52" r="1.5" fill="var(--outline)"/>
+
+    <!-- Eyes -->
+    <g class="blink" transform="translate(0, -10)">
+      <circle cx="52" cy="40" r="3" fill="var(--eye)">
+        <animate attributeName="cx" values="52;54;52" dur="2s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="68" cy="40" r="3" fill="var(--eye)">
+        <animate attributeName="cx" values="68;70;68" dur="2s" repeatCount="indefinite" />
+      </circle>
+    </g>
+
+    <!-- Horns -->
+    <path d="M47 28 Q45 22 50 22" class="outline" fill="none"/>
+    <path d="M73 28 Q75 22 70 22" class="outline" fill="none"/>
+
+    <!-- Ears -->
+    <path d="M42 34 Q36 38 42 42" fill="var(--cow-body)" stroke="var(--outline)" stroke-width="2"/>
+    <path d="M78 34 Q84 38 78 42" fill="var(--cow-body)" stroke="var(--outline)" stroke-width="2"/>
+
+    <!-- Arm (left) -->
+    <path d="M45 70 Q30 75 28 65" class="outline" fill="none" />
+
+    <!-- Arm (right, holding magnifier) -->
+    <path d="M75 70 Q90 68 95 55" class="outline" fill="none"/>
+
+    <!-- Magnifying glass (animated) -->
+    <g class="magnifier" transform="translate(95,55) rotate(20)">
+      <circle cx="0" cy="0" r="10" fill="none" stroke="var(--accent)" stroke-width="3"/>
+      <rect x="8" y="8" width="10" height="3" rx="1.5" fill="var(--accent)"/>
+      <circle cx="0" cy="0" r="6" fill="var(--accent)" opacity="0.1"/>
+    </g>
+
+    <!-- Patch -->
+    <ellipse cx="58" cy="36" rx="10" ry="5" fill="var(--cow-spot)" opacity="0.8"/>
+
+    <!-- Hooves -->
+    <rect x="42" y="96" width="8" height="6" fill="var(--outline)" rx="2"/>
+    <rect x="70" y="96" width="8" height="6" fill="var(--outline)" rx="2"/>
+  </g>
+
+  <!-- Text -->
+  <text x="60" y="115" text-anchor="middle"
+    font-family="Inter, sans-serif"
+    font-size="11"
+    fill="var(--outline)">
+    Moo... page not found
+  </text>
+</svg>
+
+

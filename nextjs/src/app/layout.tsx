@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import "@wordpress/block-library/build-style/style.css"; // Frontend block styles
 import "@wordpress/block-library/build-style/theme.css"; // Theme-related styles
 
+import "@/app/wordpress-presets.css";
 import "@/app/globals.css";
 
 import Header from "@/components/Globals/Header/Header";
